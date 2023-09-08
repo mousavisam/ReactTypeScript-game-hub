@@ -20,7 +20,13 @@ export interface Game {
 }
 
 const useGames = (
-  gameQuery: GameQuery) => useData<Genre>('/games', {params:
-     {genres: gameQuery.genre?.id, platforms: gameQuery.platform?.id, ordering: gameQuery.sortOrder}},[gameQuery]);
+  gameQuery: GameQuery) => useData<Genre>('/games', {
+    params:
+     {genres: gameQuery.genre?.id,
+       platforms: gameQuery.platform?.id,
+        ordering: gameQuery.sortOrder,
+        search: gameQuery.searchText
+      }},
+     [gameQuery]);
 
 export default useGames;

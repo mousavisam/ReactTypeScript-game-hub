@@ -3,13 +3,11 @@ import apiClient from "../services/api-client";
 import { FetchResponse } from '../services/api-client';
 import platforms from "../data/platforms";
 
-interface Platform{
+export interface Platform{
   id: number;
   name: string;
   slug: string;
 }
-
-// const usePlatforms = () => useData<Platform>('/platforms/lists/parents');
 
 const usePlatforms = () => {
   return useQuery({

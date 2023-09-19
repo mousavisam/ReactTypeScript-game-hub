@@ -8,12 +8,12 @@ const GameDetailPage = () => {
 
   if (isLoading) return <Spinner />;
 
-  if (error) throw error;
+  if (error || !game) throw error;
 
   return (
     <>
-      <Heading>{game?.name}</Heading>
-      <Text>{game?.description_raw}</Text>
+      <Heading>{game.name}</Heading>
+      <Text>{game.description_raw}</Text>
     </>
   );
 };
